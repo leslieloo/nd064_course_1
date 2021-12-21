@@ -19,8 +19,8 @@ spec:
       - name: techtrends
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        
-{{ toYaml .Values.resources | indent 8 }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
 
         ports:
           - containerPort: {{ .Values.containerPort }}
